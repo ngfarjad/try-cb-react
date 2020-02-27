@@ -6,7 +6,7 @@
         "hostName": "127.0.0.1",
         "bucket": "travel-sample",
         "user": "Administrator",
-        "password": "password",
+        "password": "123456",
         "dataPath": "",
         "indexPath": "",
         "indexType": "gsi",
