@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import './Login.scss';
+import { Input } from '@progress/kendo-react-inputs'
+import '@progress/kendo-react-intl'
+import '@progress/kendo-drawing'
 
 const Hotels = (props) => {
     document.title = `Hotels`;
@@ -39,12 +41,12 @@ const Hotels = (props) => {
                     <form className="form-inline" onSubmit={findHotels}>
                         <div className="form-group">
                             <label>Description</label>
-                            <input type="text" id="descriptionInput" ref={node => (searchForm.description = node)} name="descriptionInput" placeholder="optional keyword" onChange={findHotels} className="form-control" />
+                            <Input type="text" id="descriptionInput" ref={node => (searchForm.description = node)} name="descriptionInput" placeholder="optional keyword" onChange={findHotels} className="form-control" />
                         </div>
 
                         <div className="form-group">
                             <label>Location</label>
-                            <input type="text" id="locationInput" placeholder="eg. 'London', 'France'..." ref={node => (searchForm.location = node)} onChange={findHotels} className="form-control" />
+                            <Input type="text" id="locationInput" placeholder="eg. 'London', 'France'..." ref={node => (searchForm.location = node)} onChange={findHotels} className="form-control" />
                         </div>
 
                         <button type="submit" className="btn btn-primary btn-sm">Find Hotels</button>
@@ -70,14 +72,15 @@ const Hotels = (props) => {
                                 </tr>
                             </thead>
                             <tbody>
-                            {hotels.map(( listValue, index ) => {
-          return (
-            <tr key={index}>
-              <td>{listValue.name}</td>
-              <td>{listValue.address.suite} {listValue.address.city}</td>
-              <td>{listValue.email}</td>
-            </tr>
-          );})}
+                                {hotels.map((listValue, index) => {
+                                    return (
+                                        <tr key={index}>
+                                            <td>{listValue.name}</td>
+                                            <td>{listValue.address.suite} {listValue.address.city}</td>
+                                            <td>{listValue.email}</td>
+                                        </tr>
+                                    );
+                                })}
                                 <tr>
                                     <td className="header">
                                         item
@@ -85,7 +88,7 @@ const Hotels = (props) => {
                                     <td></td>
                                     <td></td>
                                 </tr>
-                            
+
                             </tbody>
                         </table>
                     }
